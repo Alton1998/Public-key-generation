@@ -11,7 +11,21 @@ The main aim of this project is to develop a python library implementing said sc
 * Numpy 1.18.1
 
 ## Usage
-```
+### Encryption
+```python
 # To encrypt
+from public_key import PublicKeyCrypto
 
+p = PublicKeyCrypto()
+
+p.encrypt(plain_text="PutPtextwithoutspaces")
+```
+### Decryption
+```python
+# To decrypt
+from public_key import PublicKeyCrypto
+
+p = PublicKeyCrypto()
+
+p.decrypt(c1="cipher1.npy",c2="cipher2.npy",keys = "key.npy")
 ```
