@@ -125,7 +125,9 @@ class PublicKeyCrypto:
     # performs decryption
     def decrypt(self,c1="cipher1.npy",c2="cipher2.npy",keys = "key.npy"):
         c1 = np.load(c1,allow_pickle=True)
+        self.__write_to_file_txt("cipher1.txt",c1)
         c2 = np.load(c2,allow_pickle=True)
+        self.__write_to_file_txt("cipher2.txt",c2)
         keys = np.load(keys,allow_pickle=True)
         r,key1,key2 = keys
         c2 = np.linalg.matrix_power(c2,r)
@@ -145,5 +147,5 @@ class PublicKeyCrypto:
 
 if __name__=='__main__':
     p=PublicKeyCrypto()
-    p.encrypt(plain_text="CrptographyisAwesome")
+    p.encrypt(plain_text="hinal")
     p.decrypt()
